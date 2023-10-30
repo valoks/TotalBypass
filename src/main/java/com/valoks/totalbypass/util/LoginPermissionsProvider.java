@@ -20,7 +20,7 @@ public class LoginPermissionsProvider implements PermissionProvider {
 
 class LoginPermissionsFunction implements PermissionFunction {
 
-    private Player player;
+    private final Player player;
     private boolean connected = false;
 
     public LoginPermissionsFunction(Player player) {

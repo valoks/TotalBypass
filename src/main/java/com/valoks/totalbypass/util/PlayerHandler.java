@@ -5,9 +5,7 @@ import com.valoks.totalbypass.api.ApiResult;
 import com.valoks.totalbypass.api.MinecraftAFK;
 import com.velocitypowered.api.proxy.LoginPhaseConnection;
 import com.velocitypowered.api.proxy.Player;
-import org.slf4j.Logger;
 
-import java.security.Permission;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -32,8 +30,6 @@ public class PlayerHandler {
         verified = new CompletableFuture<>();
         verify();
 
-        Logger logger = TotalBypass.INSTANCE.getLogger();
-        logger.info("Created handler for player " + username);
         handlers.put(username, this);
     }
 
@@ -46,7 +42,6 @@ public class PlayerHandler {
     }
 
     public static void removeHandler(Player player) {
-        Logger logger = TotalBypass.INSTANCE.getLogger();
         PlayerHandler handler = handlers.get(player.getUsername());
 
         if(handler == null) return;
@@ -54,8 +49,6 @@ public class PlayerHandler {
         handler.clear();
 
         handlers.remove(player.getUsername());
-
-        logger.info("Removed player " + player.getUsername() + " from handlers");
     }
 
     public static PlayerHandler getHandler(Player player) {

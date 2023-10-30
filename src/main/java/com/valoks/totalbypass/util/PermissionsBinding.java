@@ -7,7 +7,6 @@ import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.model.user.UserManager;
 import net.luckperms.api.node.Node;
-import org.slf4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
